@@ -8,6 +8,10 @@ public class BackStagePass extends Product {
     @Override
     public void oneDayLater() {
         sellin--;
+        if (sellin < 0) {
+            quality = 0;
+            return;
+        }
         if (sellin < 5) {
             quality += 3;
         } else if (sellin < 10){

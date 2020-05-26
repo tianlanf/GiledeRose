@@ -28,4 +28,12 @@ public class BackStagePassTest {
         assertEquals(4, pass.getSellin());
         assertEquals(13, pass.getQuality());
     }
+
+    @Test
+    public void shouldDropToZeroAfterExpiration() {
+        BackStagePass pass = new BackStagePass(0, 10);
+        pass.oneDayLater();
+        assertEquals(-1, pass.getSellin());
+        assertEquals(0, pass.getQuality());
+    }
 }
