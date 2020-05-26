@@ -15,9 +15,17 @@ public class BackStagePassTest {
 
     @Test
     public void shouldPlusQualityBy2WhenSellinIsLargerThan5AndLessThan11() {
-        BackStagePass pass = new BackStagePass(8, 10);
+        BackStagePass pass = new BackStagePass(10, 10);
         pass.oneDayLater();
-        assertEquals(7, pass.getSellin());
+        assertEquals(9, pass.getSellin());
         assertEquals(12, pass.getQuality());
+    }
+
+    @Test
+    public void shouldPlusQualityBy2WhenSellinIsLessThan5() {
+        BackStagePass pass = new BackStagePass(5, 10);
+        pass.oneDayLater();
+        assertEquals(4, pass.getSellin());
+        assertEquals(13, pass.getQuality());
     }
 }
