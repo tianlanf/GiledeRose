@@ -1,8 +1,8 @@
 package com.tw;
 
 public class Product {
-    private int quality;
-    private int sellin;
+    protected int quality;
+    protected int sellin;
 
     public Product(int sellin, int quality) {
         this.sellin = sellin;
