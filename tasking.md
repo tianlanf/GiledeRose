@@ -10,4 +10,5 @@
 9. Given Backstage pass with sellin of 8, quality of 10, when comes to next day, then sellin becomes 7 and quality becomes 12;
 10. Given Backstage pass with sellin of 3, quality of 10, when comes to next day, then sellin becomes 2 and quality becomes 13;
 11. Given Backstage pass with sellin of 0, quality of 10, when comes to next day, then sellin becomes -1 and quality becomes 0;
+12. Given Backstage pass with sellin of 15, quality of 50, when comes to next day, then sellin becomes 14 and quality is still 50;
 
