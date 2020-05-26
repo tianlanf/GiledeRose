@@ -12,4 +12,12 @@ public class AgedBrieTest {
         assertEquals(9, agedBrie.getSellin());
         assertEquals(11, agedBrie.getQuality());
     }
+
+    @Test
+    public void shouldPlusQualityAfterExpiration() {
+        AgedBrie agedBrie = new AgedBrie(0, 10);
+        agedBrie.oneDayLater();
+        assertEquals(-1, agedBrie.getSellin());
+        assertEquals(11, agedBrie.getQuality());
+    }
 }
