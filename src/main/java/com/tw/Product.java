@@ -11,7 +11,12 @@ public class Product {
 
     public void oneDayLater() {
         sellin--;
-        if (quality > 0) {
+        if (quality == 0) {
+            return;
+        }
+        if (sellin < 0 && quality > 1) {
+            quality -= 2;
+        } else  {
             quality--;
         }
     }
