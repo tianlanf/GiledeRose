@@ -8,6 +8,8 @@ public class AgedBrie extends Product {
     @Override
     public void oneDayLater() {
         sellin--;
-        quality++;
+        if (quality < 50) {
+            quality++;
+        }
     }
 }

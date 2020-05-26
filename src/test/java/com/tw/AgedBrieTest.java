@@ -20,4 +20,12 @@ public class AgedBrieTest {
         assertEquals(-1, agedBrie.getSellin());
         assertEquals(11, agedBrie.getQuality());
     }
+
+    @Test
+    public void shouldNotPlusQualityWhenQualityIsAlready50() {
+        AgedBrie agedBrie = new AgedBrie(10, 50);
+        agedBrie.oneDayLater();
+        assertEquals(9, agedBrie.getSellin());
+        assertEquals(50, agedBrie.getQuality());
+    }
 }
