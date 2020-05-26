@@ -19,5 +19,9 @@ public class BackStagePass extends Product {
         } else {
             quality++;
         }
+
+        if (quality > 50) {
+            quality = 50;
+        }
     }
 }

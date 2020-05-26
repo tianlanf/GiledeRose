@@ -36,4 +36,44 @@ public class BackStagePassTest {
         assertEquals(-1, pass.getSellin());
         assertEquals(0, pass.getQuality());
     }
+
+    @Test
+    public void shouldNoLongerIncreaseQualityIfQualityIsAlready50AndSellinLargerThan10() {
+        BackStagePass pass = new BackStagePass(15, 50);
+        pass.oneDayLater();
+        assertEquals(14, pass.getSellin());
+        assertEquals(50, pass.getQuality());
+    }
+
+    @Test
+    public void shouldNoLongerIncreaseQualityIfQualityIsAlready50AndSellinLargerThan5() {
+        BackStagePass pass = new BackStagePass(8, 50);
+        pass.oneDayLater();
+        assertEquals(7, pass.getSellin());
+        assertEquals(50, pass.getQuality());
+    }
+
+    @Test
+    public void shouldNoLongerIncreaseQualityIfQualityIsAlready49AndSellinLargerThan5() {
+        BackStagePass pass = new BackStagePass(8, 49);
+        pass.oneDayLater();
+        assertEquals(7, pass.getSellin());
+        assertEquals(50, pass.getQuality());
+    }
+
+    @Test
+    public void shouldNoLongerIncreaseQualityIfQualityIsAlready50AndSellinLessThan5() {
+        BackStagePass pass = new BackStagePass(1, 50);
+        pass.oneDayLater();
+        assertEquals(0, pass.getSellin());
+        assertEquals(50, pass.getQuality());
+    }
+
+    @Test
+    public void shouldNoLongerIncreaseQualityIfQualityIsAlready49AndSellinLessThan5() {
+        BackStagePass pass = new BackStagePass(3, 49);
+        pass.oneDayLater();
+        assertEquals(2, pass.getSellin());
+        assertEquals(50, pass.getQuality());
+    }
 }
