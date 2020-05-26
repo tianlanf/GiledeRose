@@ -11,7 +11,9 @@ public class Product {
 
     public void oneDayLater() {
         sellin--;
-        quality--;
+        if (quality > 0) {
+            quality--;
+        }
     }
 
     public int getSellin() {

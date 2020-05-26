@@ -12,4 +12,12 @@ public class ProductTest {
         assertEquals(9, product.getSellin());
         assertEquals(0, product.getQuality());
     }
+
+    @Test
+    public void shouldRemain0WhenProductQualityAlreadyComesTo0() {
+        Product product = new Product(9, 0);
+        product.oneDayLater();
+        assertEquals(8, product.getSellin());
+        assertEquals(0, product.getQuality());
+    }
 }
